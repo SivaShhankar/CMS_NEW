@@ -188,7 +188,7 @@ func main() {
 
 	config.LoadAppConfig()
 	config.CreateDBSession()
-	config.AddIndexes()
+	//config.AddIndexes()
 
 	mux := http.NewServeMux()
 

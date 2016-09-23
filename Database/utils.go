@@ -40,12 +40,15 @@ var Session *mgo.Session
 
 func CreateDBSession() {
 	var err error
-	Session, err = mgo.DialWithInfo(&mgo.DialInfo{
-		Addrs:    []string{AppConfig.MongoDBHost},
-		Username: AppConfig.DBUser,
-		Password: AppConfig.DBPwd,
-		Timeout:  60 * time.Second,
-	})
+	// Session, err = mgo.DialWithInfo(&mgo.DialInfo{
+	// 	Addrs:    []string{AppConfig.MongoDBHost},
+	// 	Username: AppConfig.DBUser,
+	// 	Password: AppConfig.DBPwd,
+	// 	Timeout:  60 * time.Second,
+	// })
+
+	Session, err = mgo.Dial("mongodb://gowri:gowri@ds035796.mlab.com:35796/mycmstool")
+
 	if err != nil {
 		fmt.Println(err)
 		log.Fatalf("[CreateDbSession]: %s\n", err)
