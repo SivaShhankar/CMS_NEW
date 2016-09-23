@@ -1,0 +1,273 @@
+ 
+ 
+body{
+    font-family: arial; 
+	font-size: 80%; 
+	line-height: 1.2em; 
+	width: 100%; 
+	margin: 0; 
+	background: #eee;
+}
+
+#page{ 
+	float:left;
+	margin:0px;
+	margin-left:40px;
+	margin-top:20px;
+	width:94%;	
+}
+
+#logo{
+	width: 35%;
+	margin-top: 5px;
+	font-family: georgia;
+	display: inline-block;
+}
+
+h1, h2{
+    color: orange;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin: 0 0 .5em 0;
+}
+
+h1{ font-size: 1.7em; }
+h2{ 
+	font-size: 1.5em; 
+	margin-left:1%;
+	margin-top:1%;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}
+	
+a:hover, a:active{ 
+	text-decoration: underline; 
+}
+
+#nav{
+	float:right;
+	width: 60%;	
+	text-align: right;
+	background-color:none;
+}
+
+#nav ul li{
+	display: inline-block;
+	height: 62px;
+}
+			
+#nav ul li a{
+	padding: 20px;
+	background: orange;
+	font-size:16px;
+	color: white;
+}
+
+#nav ul li a:hover{
+	background-color: #ffb424;
+	box-shadow: 0px 1px 1px #666;
+}
+			
+#nav ul li a:active{ 
+	background-color: #ff8f00; 
+}
+
+#content{
+	float:left;
+	margin:0px;
+	width:100%;
+	background: white;
+	padding:0px;
+	clear: both;
+}
+
+p{ 
+	line-height: 1em; 
+	margin-left:1%;
+}
+
+#searchDiv{
+	float:left;
+	margin-top:1%;
+	width:100%;
+	background-color:none;
+}
+
+#wrapper{
+	float:left;
+	width:100%;
+	margin-left:1%;
+}
+
+#searchFieldsWrapper{
+	float:left;
+	width:45%;
+	background-color: none;
+}
+
+#searchLabel{
+	float:left;
+	height:30px;
+	line-height:30px;
+}
+
+#seachType{
+	float:left;
+	margin-left:1%;
+	height:30px;
+	width:100px;
+}
+
+#wrapper select{
+	float:left;
+	margin-left:1%;
+	height:30px;
+}
+
+#searchTextBox{
+	float:left;
+	margin-left:2%;
+	width:200px;
+	height:30px;
+	text-indent:10px;
+	font-size:16px;
+}
+
+#searchButton{
+	float:left;
+	width:80px;
+	height:30px;
+}
+
+#filterFieldsWrapper{
+	float:left;
+	margin:0px;
+	margin-top:-1%;
+	padding:0px;
+	width:50%;
+	background-color: none;
+}
+
+#filterLabel{
+	float:left;
+	margin-left:5%;
+	height:30px;
+	line-height:30px;
+}
+
+#filterType{
+	float:left;
+	margin-left:1%;
+	height:30px;
+	width:100px;
+}
+
+#fromLabel,#toLabel{
+	float:left;
+	margin-left:1%;
+	margin-top:1.2%;
+}
+
+#from,#to{
+	float:left;
+	margin-left:1%;
+	height:30px;
+	text-indent:10px;
+}
+
+#filterButton{
+	float:left;
+	margin-left: 1%;
+	width:80px;
+	height:30px;
+}
+
+
+#tableDiv{
+	float:left;
+	width:100%;
+	background-color:none;
+	overflow-x: scroll;
+}
+
+table{
+	float:left;
+	margin-top:0%;
+	padding:20px;
+	width:130%;
+	margin-bottom:2%;
+}
+th{
+	font-size:15px;
+	padding:10px;
+}
+
+tr{
+	height:30px;
+}
+
+tr:hover{
+	background-color:#ccc;
+}
+
+td{
+	text-align:center;
+	font-size:14px;
+}
+
+ 
+#footer{
+	float:left;
+	width:100%;
+	border-bottom: 1px #ccc solid;
+	margin-bottom: 10px;
+}
+
+#footer p{
+	text-align: right;
+	text-transform: uppercase;
+	font-size: 80%;
+	color: grey;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+	height:60%;
+}
+
+/* The Close Button */
+.ClosePopup {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ClosePopup:hover,
+.ClosePopup:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
