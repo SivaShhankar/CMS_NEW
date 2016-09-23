@@ -186,9 +186,9 @@ func GetPort() string {
 
 func main() {
 
-	//config.LoadAppConfig()
-	//config.CreateDBSession()
-	//config.AddIndexes()
+	config.LoadAppConfig()
+	config.CreateDBSession()
+	config.AddIndexes()
 
 	mux := http.NewServeMux()
 
