@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"time"
 
 	mgo "gopkg.in/mgo.v2"
 )
@@ -78,12 +77,14 @@ func AddIndexes() {
 func getSession() *mgo.Session {
 	if Session == nil {
 		var err error
-		Session, err = mgo.DialWithInfo(&mgo.DialInfo{
-			Addrs:    []string{AppConfig.MongoDBHost},
-			Username: AppConfig.DBUser,
-			Password: AppConfig.DBPwd,
-			Timeout:  60 * time.Second,
-		})
+		// Session, err = mgo.DialWithInfo(&mgo.DialInfo{
+		// 	Addrs:    []string{AppConfig.MongoDBHost},
+		// 	Username: AppConfig.DBUser,
+		// 	Password: AppConfig.DBPwd,
+		// 	Timeout:  60 * time.Second,
+		// })
+		Session, err = mgo.Dial("mongodb://gowri:gowri@ds035796.mlab.com:35796/mycmstool")
+
 		if err != nil {
 			log.Fatalf("[GetSession]: %s\n", err)
 		}
