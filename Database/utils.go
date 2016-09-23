@@ -45,9 +45,7 @@ func CreateDBSession() {
 	// 	Password: AppConfig.DBPwd,
 	// 	Timeout:  60 * time.Second,
 	// })
-
 	Session, err = mgo.Dial("mongodb://gowri:gowri@ds035796.mlab.com:35796/mycmstool")
-
 	if err != nil {
 		fmt.Println(err)
 		log.Fatalf("[CreateDbSession]: %s\n", err)
@@ -70,7 +68,7 @@ func AddIndexes() {
 
 	err = userCol.EnsureIndex(userIndex)
 	if err != nil {
-		log.Fatalf("[addIndexes]: %s\n", err)
+		log.Fatalf("[AddIndexes]: %s\n", err)
 	}
 }
 
@@ -84,9 +82,8 @@ func getSession() *mgo.Session {
 		// 	Timeout:  60 * time.Second,
 		// })
 		Session, err = mgo.Dial("mongodb://gowri:gowri@ds035796.mlab.com:35796/mycmstool")
-
 		if err != nil {
-			log.Fatalf("[GetSession]: %s\n", err)
+			log.Fatalf("[getSession]: %s\n", err)
 		}
 	}
 	return Session

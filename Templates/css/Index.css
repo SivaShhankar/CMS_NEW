@@ -71,7 +71,8 @@ a:hover, a:active{
 }
 
 #content{
-	margin: 30px 0;
+	float:left;
+	width:100%;
 	background: white;
 	padding: 20px;
 	clear: both;
@@ -80,8 +81,10 @@ a:hover, a:active{
 p{ line-height: 1em; }
 
 #footer{
-	border-bottom: 1px #ccc solid;
 	margin-bottom: 10px;
+	float:left;
+	width:100%;
+	
 }
 
 #footer p{
@@ -89,6 +92,8 @@ p{ line-height: 1em; }
 	text-transform: uppercase;
 	font-size: 80%;
 	color: grey;
+	font-style: italic;
+	font-weight: bold;
+	position: relative;
+	bottom: 0px;
 }
-
-

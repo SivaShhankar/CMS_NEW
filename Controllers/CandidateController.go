@@ -12,95 +12,126 @@ import (
 	models "github.com/SivaShhankar/CMS_NEW/Models"
 )
 
+func retrieveCurrentCollection(dataStore *config.DataStore) Candidates {
+
+	// Gets the current collection
+	col := dataStore.Collection("JobCandidates")
+	candidates := Candidates{C: col}
+
+	return candidates
+}
+
 func GetAllApplicantsInfo(session *mgo.Session) []models.ApplicantInfo {
 
-	var b []models.ApplicantInfo
+	var applicants []models.ApplicantInfo
 
+	// create new data store.
 	dataStore := config.NewDataStore()
 
 	// Close the session.
 	defer dataStore.Close()
-	col := dataStore.Collection("JobCandidates")
-	candidates := Candidates{C: col}
 
-	iter := candidates.C.Find(nil).Sort("Name").Iter()
+	candidates := retrieveCurrentCollection(dataStore)
+
+	iter := candidates.C.Find(nil).Sort("name").Iter()
+
 	result := models.ApplicantInfo{}
+
 	for iter.Next(&result) {
-		b = append(b, result)
+		applicants = append(applicants, result)
 	}
-	return b
+
+	return applicants
 }
 
 func GetApplicantByMobileNumber(session *mgo.Session, MobileNumber int) []models.ApplicantInfo {
-	var b []models.ApplicantInfo
+
+	var applicants []models.ApplicantInfo
 
 	dataStore := config.NewDataStore()
 
-	// Close the session.
 	defer dataStore.Close()
-	col := dataStore.Collection("JobCandidates")
-	candidates := Candidates{C: col}
 
-	//iter := candidates.C.Find(bson.M{"mobile": &bson.RegEx{Pattern: MobileNumber, Options: "i"}}).Sort("name").Iter()
+	candidates := retrieveCurrentCollection(dataStore)
+
 	iter := candidates.C.Find(bson.M{"mobile": MobileNumber}).Iter()
+
 	result := models.ApplicantInfo{}
 
 	for iter.Next(&result) {
 
-		b = append(b, result)
+		applicants = append(applicants, result)
 	}
 
-	return b
+	return applicants
 }
 
 type Candidates struct {
 	C *mgo.Collection
 }
 
-func SearchCandidates(session *mgo.Session, searchType, searchValue string) []models.ApplicantInfo {
+func SearchCandidatesByType(session *mgo.Session, searchType, searchValue string) []models.ApplicantInfo {
 
-	var b []models.ApplicantInfo
+	var applicants []models.ApplicantInfo
 
 	dataStore := config.NewDataStore()
 
-	// Close the session.
 	defer dataStore.Close()
-	col := dataStore.Collection("JobCandidates")
-	candidates := Candidates{C: col}
+
+	candidates := retrieveCurrentCollection(dataStore)
 
 	iter := candidates.C.Find(bson.M{searchType: &bson.RegEx{Pattern: searchValue, Options: "i"}}).Sort("name").Iter()
+
 	result := models.ApplicantInfo{}
+
 	for iter.Next(&result) {
-		b = append(b, result)
+		applicants = append(applicants, result)
 	}
-	return b
+
+	return applicants
 }
 
-func FilterCandidates(session *mgo.Session, filterType string, sFrom, sTo string) []models.ApplicantInfo {
+func FilterCandidatesByRange(session *mgo.Session, filterType, rangeFrom, rangeTo string) []models.ApplicantInfo {
 
-	var b []models.ApplicantInfo
+	var applicants []models.ApplicantInfo
+
+	from, _ := strconv.Atoi(rangeFrom)
+	to, _ := strconv.Atoi(rangeTo)
 
 	dataStore := config.NewDataStore()
 
-	from, _ := strconv.Atoi(sFrom)
-	to, _ := strconv.Atoi(sTo)
-
-	// Close the session.
 	defer dataStore.Close()
-	col := dataStore.Collection("JobCandidates")
-	candidates := Candidates{C: col}
 
-	iter := candidates.C.Find(bson.M{filterType: bson.M{"$gt": from - 1, "$lt": to + 1}}).Sort(filterType).Iter()
+	candidates := retrieveCurrentCollection(dataStore)
+
+	iter := candidates.C.Find(bson.M{filterType: bson.M{"$gte": from, "$lte": to}}).Sort(filterType).Iter()
 
 	result := models.ApplicantInfo{}
 
 	for iter.Next(&result) {
-		b = append(b, result)
+		applicants = append(applicants, result)
 	}
 
-	fmt.Println(b)
+	fmt.Println(applicants)
 
-	return b
+	return applicants
+}
+
+func DeleteCandidateByMobileNumber(session *mgo.Session, mobileNumber string) error {
+
+	mobile, _ := strconv.Atoi(mobileNumber)
+
+	fmt.Println("Mobile Number: ", mobile)
+
+	dataStore := config.NewDataStore()
+
+	defer dataStore.Close()
+
+	candidates := retrieveCurrentCollection(dataStore)
+
+	err := candidates.C.Remove(bson.M{"mobile": mobile})
+
+	return err
 }
 
 func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
@@ -109,6 +140,8 @@ func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
 	name := r.FormValue("name")
 	sage := r.FormValue("age")
 	gender := r.FormValue("gender")
+
+	sOldMobile := r.FormValue("oldMobile")
 	smobile := r.FormValue("mobile")
 	email := r.FormValue("email")
 	location := r.FormValue("location")
@@ -116,22 +149,23 @@ func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
 	qualification := r.FormValue("qualification")
 	specialization := r.FormValue("specialization")
 	department := r.FormValue("department")
+	jobCode := r.FormValue("jobCode")
 	position := r.FormValue("position")
 	sExpMonth := r.FormValue("expMonth")
 	sExpYear := r.FormValue("expYear")
-
-	//fmt.Println("ex", sExpMonth)
+	sourceFrom := r.FormValue("sourceFrom")
 
 	age, _ := strconv.Atoi(sage)
 	mobile, _ := strconv.Atoi(smobile)
-	expMonth, _ := strconv.Atoi(sExpMonth)
-	expYear, _ := strconv.Atoi(sExpYear)
+	OldMobile, _ := strconv.Atoi(sOldMobile)
+	sExperience := sExpYear + "." + sExpMonth
 
-	experience := (float32)(expYear*12+expMonth) / 12
+	experience, _ := strconv.ParseFloat(sExperience, 64)
 
-	fmt.Println("no ex", experience)
+	fmt.Println(experience)
 
 	_, handler, err := r.FormFile("file")
+
 	var cvpath string
 
 	// If no file has selected in the Form, it will throw an error
@@ -139,6 +173,7 @@ func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
 	// Cond 2 : if mode is Insert, then retreive file value from file field
 
 	if err != nil && mode == "Update" {
+
 		cvpath = r.FormValue("uploadedFile")
 	} else {
 		cvpath = r.FormValue("name") + "-" + r.FormValue("mobile") + "-" + handler.Filename
@@ -146,11 +181,9 @@ func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
 
 	dataStore := config.NewDataStore()
 
-	// Close the session.
 	defer dataStore.Close()
 
-	col := dataStore.Collection("JobCandidates")
-	candidates := Candidates{C: col}
+	candidates := retrieveCurrentCollection(dataStore)
 
 	if mode == "Insert" {
 		err = candidates.C.Insert(&models.ApplicantInfo{
@@ -163,13 +196,16 @@ func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
 			Qualification:  qualification,
 			Specialization: specialization,
 			Department:     department,
+			JobCode:        jobCode,
 			Position:       position,
 			Experience:     experience,
 			CvPath:         cvpath,
+			SourceFrom:     sourceFrom,
 		})
 
 	} else if mode == "Update" {
-		err = candidates.C.Update(bson.M{"mobile": mobile}, &models.ApplicantInfo{
+		fmt.Println(mobile)
+		err = candidates.C.Update(bson.M{"mobile": OldMobile}, &models.ApplicantInfo{
 			Name:           name,
 			Age:            age,
 			Gender:         gender,
@@ -179,9 +215,11 @@ func SaveInfo(session *mgo.Session, r *http.Request, mode string) {
 			Qualification:  qualification,
 			Specialization: specialization,
 			Department:     department,
+			JobCode:        jobCode,
 			Position:       position,
 			Experience:     experience,
 			CvPath:         cvpath,
+			SourceFrom:     sourceFrom,
 		})
 	}
 

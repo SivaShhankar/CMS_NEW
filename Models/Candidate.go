@@ -13,9 +13,9 @@ type ApplicantInfo struct {
 	Qualification  string        `json:"qualification"`
 	Specialization string        `json:"specialization"`
 	Department     string        `json:"department"`
+	JobCode        string        `json:"jobcode"`
 	Position       string        `json:"position"`
-	Experience     float32       `json:"experience"`
+	Experience     float64       `json:"experience"`
 	CvPath         string        `json:"cvpath"`
+	SourceFrom     string        `json:"sourcefrom"`
 }
-
-// Comment
