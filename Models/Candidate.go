@@ -1,6 +1,6 @@
 package Models
 
-import "github.com/gopkg.in/mgo.v2/bson"
+import "gopkg.in/mgo.v2/bson"
 
 type ApplicantInfo struct {
 	ID             bson.ObjectId `bson:"_id,omitempty" json:"id"`

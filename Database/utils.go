@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	mgo "github.com/gopkg.in/mgo.v2"
+	mgo "gopkg.in/mgo.v2"
 )
 
 type configuration struct {

@@ -10,10 +10,12 @@ import (
 
 	_ "github.com/gorilla/mux"
 	//"time"
-	model "CMS_NEW/Controllers"
-	config "CMS_NEW/Database"
-	models "CMS_NEW/Models"
 	"strconv"
+
+	config "github.com/SivaShhankar/CMS_NEW/Database"
+	models "github.com/SivaShhankar/CMS_NEW/Models"
+
+	model "github.com/SivaShhankar/CMS_NEW/Controllers"
 )
 
 var message = ""

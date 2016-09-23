@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"strconv"
 
-	mgo "github.com/gopkg.in/mgo.v2"
-	bson "github.com/gopkg.in/mgo.v2/bson"
+	mgo "gopkg.in/mgo.v2"
+	bson "gopkg.in/mgo.v2/bson"
 
-	config "CMS_NEW/Database"
-	models "CMS_NEW/Models"
+	config "github.com/SivaShhankar/CMS_NEW/Database"
+	models "github.com/SivaShhankar/CMS_NEW/Models"
 )
 
 func GetAllApplicantsInfo(session *mgo.Session) []models.ApplicantInfo {
