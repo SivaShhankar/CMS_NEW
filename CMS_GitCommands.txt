@@ -1,0 +1,264 @@
+    1  git
+    2  git init
+    3  cd E:\Gowri\Personal\GO_Workings\src\github.com\SivaShhankar\CMS_NEW
+    4  /E/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+    5  cd /E/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+    6  git init
+    7  git add.
+    8  git add .
+    9  git add
+   10  git add .
+   11  git commit - m "Project Added"
+   12  git commit -m "Project Added"
+   13  git config --global --edit
+   14  git config --global --edit
+   15  cd /e:/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar
+   16  cd /e/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar
+   17  git init
+   18  git add .
+   19  git commit "Source code added"
+   20  git commit -m "Source code added"
+   21  git commit
+   22  git init
+   23  git add .
+   24  git commit
+   25  git remote add origin remote repository URL
+   26  git remote add CMS https://github.com/SivaShhankar/CMS_Tool.git
+   27  git push CMS
+   28  git push --set-upstream CMS master
+   29  git remote -v
+   30  git remote add CMS https://github.com/SivaShhankar/CMS.git
+   31  git remote rm CMS
+   32  git remove -v
+   33  git remote -v
+   34  git remote add CMS https://github.com/SivaShhankar/CMS.git
+   35  git push CMS master
+   36  git remote add CMS https://github.com/SivaShhankar/CMS.git
+   37  git init
+   38  git remote add CMS https://github.com/SivaShhankar/CMS.git
+   39  git pull CMS master
+   40  git add .
+   41  git commit
+   42  git push CMS master
+   43  git commit
+   44  git push
+   45  git push CMS
+   46  git status
+   47  git add .
+   48  git commit
+   49  git push CMS
+   50  git push
+   51  git status
+   52  git status CMS master
+   53  git push
+   54  git push CMS
+   55  git push CMS master
+   56  git pull CMS master
+   57  git init
+   58  git pull CMS master
+   59  git remote add CMS https://github.com/SivaShhankar/CMS.git
+   60  git pull CMS master
+   61  cd /e:/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+   62  cd /e:/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS
+   63  cd /e:/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+   64  cd /e/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+   65  git init
+   66  git remote add CMS https://github.com/SivaShhankar/CMS.git
+   67  git add .
+   68  git commit
+   69  git push CMS master
+   70  git pull cms master
+   71  git pull CMS master
+   72  git push CMS master
+   73  git remote -v
+   74  remove remote
+   75  Remove remote
+   76  git remote rm CMS
+   77  Remove remote
+   78  git remote -v
+   79  cd /E/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+   80  cd /E/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar
+   81  git remote -v
+   82  git remove
+   83  git rm
+   84  git add .
+   85  git add
+   86  git status
+   87  cd /E/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/TestWebApp
+   88  git remote add TestWebApp https://github.com/SivaShhankar/TestWebApp.git
+   89  git init
+   90  git remote add TestWebApp https://github.com/SivaShhankar/TestWebApp.git
+   91  git pull master
+   92  git pull TestWebApp master
+   93  git add .
+   94  git commit
+   95  git push TestWebApp Master
+   96  git push TestWebApp master
+   97  heroku
+   98  heroku create
+   99  git push heroku master
+  100  heroku create myapp --buildpack heroku/go
+  101  heroku create TestWebApp --buildpack heroku/go
+  102  heroku create testWebApp --buildpack heroku/go
+  103  heroku create testwebapp --buildpack heroku/go
+  104  heroku create testweb --buildpack heroku/go
+  105  heroku create testmyweb --buildpack heroku/go
+  106  git push heroku master
+  107  git push testwebapp master
+  108  git push heroku
+  109  git push heroku master
+  110  git add .
+  111  git status
+  112  git commit
+  113  git push TestWebApp master
+  114  heroku create testmyweb --buildpack heroku/go
+  115  heroku create testmywebapp --buildpack heroku/go
+  116  heroku open
+  117  godep save -r
+  118  godep save-r
+  119  go get github.com/tools/godep
+  120  godep save-r
+  121  heroku open
+  122  heroku create
+  123  git remote -v
+  124  heroku git:remote -a falling-wind-1624
+  125  heroku git:remote - a sleepy-shelf-22890.git
+  126  heroku git:remote -a sleepy-shelf-22890.git
+  127  heroku git:remote -a sleepy-shelf-22890
+  128  hreoku create
+  129  hrroku create
+  130  heroku create
+  131  git remote -v
+  132  heroku git:remote -a sleepy-shelf-22890
+  133  git push heroku
+  134  git push heroku master
+  135  git remote -v
+  136  heroku buildpacks:set heroku/php
+  137  heroku buildpacks:set heroku/go
+  138  git push heroku master
+  139  heroku config:unset https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-php
+  140  heroku config:set https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-go
+  141  git push heroku master
+  142  buildpacks:clear
+  143  heroku buildpacks:clear
+  144  git push heroku master
+  145  heroku buildpacks:set heroku/go
+  146  git push heroku master
+  147  cd /e/Gowri/Persona/GO_Workings/src/github.com/SivaShhankar/TestWebApp
+  148  cd /e/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/TestWebApp
+  149  go get -u github.com/kardianos/govendor
+  150  govendor init
+  151  git govendor init
+  152  git add -A vendor;git commit -am "Setup Vendor"
+  153  govendor list
+  154  export GOBIN=$GOPATH/bin
+  155  export PATH=$GOPATH:$GOBIN:$PATH
+  156  godep
+  157  govendor
+  158  godep save -r
+  159  cd /E/Gowri/Personal/GO_Workings/src/github.com/SivaShhankar/CMS_NEW
+  160  git init
+  161  git remote -v
+  162  git add .
+  163  git commit "Initial Add"
+  164  git commit
+  165  git remote add CMS https://github.com/SivaShhankar/CMS_NEW.git
+  166  git push CMS master
+  167  git add .
+  168  git commit
+  169  git push CMS master
+  170  git remote -v
+  171  godep
+  172  godep save
+  173  go get github.com/tools/godep
+  174  godep
+  175  godep save
+  176  export GOBIN =$GOPATH/bin
+  177  export GOBIN=$GOPATH/bin
+  178  export PATH=$GOPATH:$GOBIN:$PATH
+  179  godep save
+  180  godep save
+  181  git status
+  182  go build
+  183  godep save
+  184  git add .
+  185  git commit
+  186  git commit
+  187  git commit
+  188  git push CMS master
+  189  Heroku buildpacks:set https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-go
+  190  heroku create CMS
+  191  heroku create cms
+  192  heroku create cmstool
+  193  Heroku buildpacks:set https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-go
+  194  git push heroku master
+  195  git remote -v
+  196  git push heroku master
+  197  heroku create
+  198  git push heroku master
+  199  heroku config:set BUILDPACK_URL=https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-go
+  200  git push heroku master
+  201  git pull CMS master
+  202  git push CMS master
+  203  git push heroku cms master
+  204  git push heroku cmstool master
+  205  git push heroku master
+  206  git push heroku master
+  207  git remote -v
+  208  git push heroku master
+  209  heroku open
+  210  heroku logs
+  211  git remote -v
+  212  git add .
+  213  git commit -m "Checking"
+  214  git push CMS master
+  215  git add .
+  216  git commit -m "Checking"
+  217  git push CMs master
+  218  git push CMS master
+  219  git push heroku master
+  220  git add .
+  221  git commit -m "Checking"
+  222  git push CMS master
+  223  git push heroku master
+  224  git add .
+  225  git commit -m "DB configuation Changed"
+  226  git push CMS master
+  227  git push heroku master
+  228  heroku open
+  229  git add .
+  230  git commit
+  231  git push CMS master
+  232  git push heroku master
+  233  git add .
+  234  git status
+  235  git add .
+  236  git status
+  237  git commit
+  238  git pull CMS master
+  239  git add .
+  240  git status
+  241  godep save
+  242  git add .
+  243  git commit
+  244  git commit -m "Dependency updated"
+  245  git push CMS master
+  246  git remote -v
+  247  git push heroku master
+  248  git add .
+  249  git status
+  250  git commit -m "missing view icon added"
+  251  git push CMS master
+  252  git push heroku master
+  253  git add .
+  254  git status
+  255  git commit -m "icon name changed"
+  256  git push CMS master
+  257  git push heroku master
+  258  history > CMS_GitCommands.txt
+  259  git add Templates/Files		// Commit Specific Folder
+  260  heroku git:clone -a whispering-brook-27827 // Clone git Repository
+  261  heroku config:get Config-Var-name -s >> .env // Create .env file to store config values from production
+  262  heroku local // locally launch the application
+  263  heroku ps:scale web=1 // To fix the error (No web process running)
+  264  heroku apps:destroy testcmsdemo //(remove application testcmsdemo)
